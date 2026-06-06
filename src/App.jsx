@@ -563,6 +563,282 @@ function ChecklistPage({ sections, label, footer }) {
 }
 
 // ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  SAM'S JAWS TRAIL DATA  (100% fictional. Do not cite in academic work.) ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+const jawsSites = [
+  {
+    id: "j1",
+    name: "Old Faithful",
+    type: "Geyser",
+    location: "Upper Geyser Basin",
+    jawsConnection: "The Shark's Blowhole",
+    badge: "🦈 CONFIRMED SITE",
+    lore: `Steven Spielberg's original cut of Jaws (1974) included a 14-minute sequence in which Chief Brody theorizes that the great white shark is actually a thermal creature, drawn inland through an underground geothermal channel. Old Faithful's eruption interval of 90 minutes exactly matches the shark's feeding schedule in the film's first act. The production team visited Yellowstone in 1973 during pre-production, and Spielberg famously told his crew: "That geyser is the shark breathing." The scene was cut for pacing, but the analogy survived — the mechanical shark (nicknamed "Bruce") was originally programmed to surface every 90 minutes in a direct homage. You can hear the two-note John Williams theme faintly if you stand at the back of the crowd and listen very carefully right before the eruption peaks.`,
+    visited: false,
+  },
+  {
+    id: "j2",
+    name: "Dragon's Mouth Spring",
+    type: "Hot Spring / Mud Pot",
+    location: "Mud Volcano Area",
+    jawsConnection: "The Shark's Actual Mouth",
+    badge: "🎬 FILMING LOCATION",
+    lore: `This is the one. The cavernous, groaning, steam-belching Dragon's Mouth Spring was used as the conceptual reference model for the mechanical shark's mouth hydraulics. A Universal Pictures concept artist named Dale Hennessy visited in 1972 and sketched the spring's rhythmic surging for the engineering team building Bruce. The gurgling, thumping sound the spring makes — caused by steam pockets collapsing against the cave walls — was recorded by sound designer Roger Heman Jr. and appears in the film during every underwater shark POV shot. It's subtly layered under the John Williams score. If you close your eyes at Dragon's Mouth and listen, you are literally hearing the sound of the shark.`,
+    visited: false,
+  },
+  {
+    id: "j3",
+    name: "Grand Prismatic Spring",
+    type: "Hot Spring",
+    location: "Midway Geyser Basin",
+    jawsConnection: "The Ocean Floor Sequence",
+    badge: "🎬 FILMING LOCATION",
+    lore: `The iconic underwater shot of Chrissie Watkins being pulled under — shot by cinematographer Bill Butler — was color-graded to match the exact thermal gradient of Grand Prismatic Spring. The outer blue ring, the green transitional band, the orange bacterial mat at the edge: these colors were used as the underwater palette reference. Spielberg had a print of a 1971 National Geographic photo of Grand Prismatic taped to the wall of the editing bay during post-production. The thermal gradient, he said, "looks exactly like what fear looks like from underwater." The overlook trail gives you the full aerial view. Find the orange edge of the spring. That orange is the same orange as Chrissie's hair in the opening scene. This is not a coincidence.`,
+    visited: false,
+  },
+  {
+    id: "j4",
+    name: "Steamboat Geyser",
+    type: "Geyser",
+    location: "Norris Geyser Basin",
+    jawsConnection: "The Orca's Engine Room",
+    badge: "🦈 CONFIRMED SITE",
+    lore: `Steamboat Geyser — the tallest active geyser on Earth, capable of erupting 300 feet into the air — was the direct inspiration for the Orca's catastrophic engine failure in the film's third act. Robert Shaw (Quint) reportedly researched the geyser extensively for his role, telling an interviewer in 1974: "I wanted to understand what it feels like to be sitting on top of something that's about to explode. I read everything I could find about Steamboat." The geyser's unpredictability — it can go dormant for years then erupt without warning — mirrors Quint's psychology exactly. His boat, like Steamboat, builds pressure in silence and then destroys everything. Quint IS Steamboat Geyser. You will feel this when you stand next to it.`,
+    visited: false,
+  },
+  {
+    id: "j5",
+    name: "Morning Glory Pool",
+    type: "Hot Spring",
+    location: "Upper Geyser Basin",
+    jawsConnection: "Amity Island Harbor",
+    badge: "📍 LOCATION SCOUT SITE",
+    lore: `In 1972, location scouts for Jaws photographed Morning Glory Pool as a potential stand-in for Amity Island's harbor — the deep blue center surrounded by a perfectly circular shoreline matched what Spielberg wanted for underwater harbor shots. The pool was ultimately not used because it was in a National Park, but the circular shape of Amity Island harbor in the film's establishing shots was directly traced from an aerial photograph of Morning Glory Pool. Note the deep blue center fading to cyan: this is the exact color palette of the harbor scenes. Also, the pool has been slowly fading to orange due to decades of tourists throwing coins in — much like Amity Island's economy was destroyed by the shark. The metaphor is not subtle. Spielberg knew.`,
+    visited: false,
+  },
+  {
+    id: "j6",
+    name: "Norris Geyser Basin — Porcelain Basin",
+    type: "Thermal Basin",
+    location: "Norris Geyser Basin",
+    jawsConnection: "The Beach Scene Stand-In",
+    badge: "🎬 FILMING LOCATION",
+    lore: `The opening beach scene — Chrissie running toward the water at night — was originally scripted to take place on a lake shore with a stark, pale landscape behind her. Porcelain Basin, with its bleached white silica flats and eerie steaming vents, was the mood reference for that scene's production design. Cinematographer Bill Butler described wanting "a white nothing — a pale, empty place where something horrible could happen without warning." He had a photo of Porcelain Basin in his camera bag during the Martha's Vineyard shoot. The pale ground. The hissing. The sense that the earth itself is unwell. Walk Porcelain Basin at dusk if you can. You will understand exactly what he meant.`,
+    visited: false,
+  },
+  {
+    id: "j7",
+    name: "Storm Point Trail",
+    type: "Hike",
+    location: "Yellowstone Lake, near Fishing Bridge",
+    jawsConnection: "Hooper's Oceanographic Institute Walk",
+    badge: "🦈 CONFIRMED SITE",
+    lore: `Matt Hooper (Richard Dreyfuss) walks along a harbor breakwater early in the film in a scene that establishes him as a man who is comfortable where land meets deep water. The visual rhythm of that walk — rocky shoreline, open water to the left, wind — was choreographed based on stills from Storm Point Trail. The trail's exposure to Yellowstone Lake, which is 320 feet deep in places and cold enough to be fatal in minutes, gave the production team the psychological reference they needed for Hooper's character: someone who knows exactly how dangerous the water is, walks beside it anyway, and smiles. Walk Storm Point. Feel that wind off the lake. You are walking in Hooper's visual DNA.`,
+    visited: false,
+  },
+  {
+    id: "j8",
+    name: "Mud Volcano",
+    type: "Thermal Feature",
+    location: "Mud Volcano Area",
+    jawsConnection: "The Shark's Stomach Contents",
+    badge: "📍 RESEARCH SITE",
+    lore: `When Hooper cuts open the tiger shark caught off Amity Island and finds no human remains inside — just a license plate, a tin can, and fish — the contents were chosen based on a 1969 geological survey of Mud Volcano's ejecta, which famously contains rocks, mineral deposits, and debris from deep underground. The prop department had a copy of the survey. The bubbling, churning gray mud of the Mud Volcano was described by a Universal art director as "exactly what the inside of something ancient and digestive looks like." Stand at the overlook. Look directly down into the churning gray. That is the shark's stomach. You are looking into the shark's stomach.`,
+    visited: false,
+  },
+  {
+    id: "j9",
+    name: "Fairy Falls Trail",
+    type: "Hike",
+    location: "Midway Geyser Basin trailhead",
+    jawsConnection: "The Deleted 'Land Shark' Chase Scene",
+    badge: "🎬 FILMING LOCATION",
+    lore: `Almost nobody knows this, but Spielberg's original treatment for Jaws included a sequence — later cut and never filmed — in which Quint tracks a second, smaller shark through coastal marsh grass on foot. The script described "a narrow trail through tall reeds, the marsh steaming, the shark somehow ahead of him, always just out of sight." That trail description was lifted almost verbatim from a description of Fairy Falls Trail that Spielberg's assistant found in a 1970 Sunset Magazine feature on Yellowstone. The trail itself — flat, narrow, cutting through thermal flats with Grand Prismatic steaming to the right — is the exact geography of the unfilmed scene. You are hiking a scene that was never shot. You are inside a deleted version of Jaws.`,
+    visited: false,
+  },
+  {
+    id: "j10",
+    name: "Lamar Valley",
+    type: "Wildlife Viewing Area",
+    location: "Northeast Yellowstone",
+    jawsConnection: "The Shark's Natural Habitat Research",
+    badge: "🦈 CONFIRMED SITE",
+    lore: `Peter Benchley, who wrote the original Jaws novel, visited Lamar Valley in 1971 while working on the book. He was researching apex predator behavior — specifically how a large predator uses an open landscape, patrols territory, and creates psychological pressure in prey animals without being seen. Watching wolves hunt bison in Lamar Valley gave Benchley the behavioral model for the shark: the long patient circling, the sudden explosive strike from open water, the way the valley (like the ocean) looks empty but never actually is. Every scene in the novel where you feel watched but see nothing — that's Lamar Valley. The shark hunts like a Lamar wolf. You will feel it when you're scanning the flats with binoculars at 6 AM and realize something has been watching you back.`,
+    visited: false,
+  },
+];
+
+// ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  SAM'S JAWS TRAIL COMPONENT                                              ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+const JAWS_DARK = "#0a1628";
+const JAWS_BLUE = "#1a3a6e";
+const JAWS_MID  = "#1e4d8c";
+const JAWS_TEAL = "#2a7a8a";
+const JAWS_RED  = "#c0392b";
+const JAWS_GOLD = "#e8b84b";
+const JAWS_TEXT = "#d4e8f0";
+const JAWS_MUTED = "#6a90a8";
+
+const badgeColors = {
+  "🎬 FILMING LOCATION": { bg: "#c0392b22", border: "#c0392b88", text: "#e74c3c" },
+  "🦈 CONFIRMED SITE":   { bg: "#1a3a6e44", border: "#2a7a8a88", text: "#2a9db8" },
+  "📍 LOCATION SCOUT SITE": { bg: "#e8b84b22", border: "#e8b84b88", text: "#e8b84b" },
+  "📍 RESEARCH SITE":    { bg: "#7a5b8a22", border: "#7a5b8a88", text: "#a87ad4" },
+};
+
+function JawsSiteCard({ site, visited, onToggle }) {
+  const [open, setOpen] = useState(false);
+  const bc = badgeColors[site.badge] || badgeColors["📍 RESEARCH SITE"];
+
+  return (
+    <div style={{
+      background: visited ? `${JAWS_BLUE}55` : `${JAWS_DARK}cc`,
+      border: `1.5px solid ${visited ? JAWS_TEAL : JAWS_BLUE}`,
+      borderRadius: 14,
+      marginBottom: 14,
+      overflow: "hidden",
+      boxShadow: visited ? `0 0 12px ${JAWS_TEAL}44` : "0 2px 8px rgba(0,0,0,0.4)",
+      transition: "all 0.3s ease",
+    }}>
+      {/* Header row */}
+      <div style={{ padding: "14px 16px", display: "flex", alignItems: "flex-start", gap: 12 }}>
+        {/* Checkbox */}
+        <div
+          onClick={() => onToggle(site.id)}
+          style={{
+            width: 26, height: 26, borderRadius: 6, flexShrink: 0, marginTop: 2,
+            border: `2px solid ${visited ? JAWS_TEAL : JAWS_MUTED}`,
+            background: visited ? JAWS_TEAL : "transparent",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            cursor: "pointer", transition: "all 0.2s ease",
+          }}
+        >
+          {visited && <span style={{ color: "#fff", fontSize: 14, fontWeight: 700 }}>✓</span>}
+        </div>
+
+        {/* Content */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 4 }}>
+            <span style={{
+              fontSize: 10, fontWeight: 700, letterSpacing: "0.08em",
+              background: bc.bg, border: `1px solid ${bc.border}`, color: bc.text,
+              borderRadius: 999, padding: "2px 10px",
+            }}>{site.badge}</span>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: JAWS_MUTED, letterSpacing: "0.1em" }}>{site.type.toUpperCase()} · {site.location.toUpperCase()}</span>
+          </div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 17, fontWeight: 700, color: visited ? JAWS_TEAL : JAWS_TEXT, lineHeight: 1.2 }}>
+            {site.name}
+          </div>
+          <div style={{ fontSize: 13, color: JAWS_GOLD, fontStyle: "italic", marginTop: 3 }}>
+            "{site.jawsConnection}"
+          </div>
+        </div>
+
+        {/* Expand toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          style={{
+            background: "transparent", border: `1px solid ${JAWS_BLUE}`, borderRadius: 8,
+            color: JAWS_MUTED, fontSize: 11, padding: "5px 10px", cursor: "pointer",
+            fontFamily: "'DM Mono', monospace", letterSpacing: "0.05em", flexShrink: 0,
+            transition: "all 0.2s ease",
+          }}
+        >
+          {open ? "HIDE" : "LORE"}
+        </button>
+      </div>
+
+      {/* Expanded lore */}
+      {open && (
+        <div style={{
+          margin: "0 16px 16px",
+          padding: "16px",
+          background: `${JAWS_DARK}88`,
+          borderRadius: 10,
+          border: `1px solid ${JAWS_BLUE}66`,
+          borderLeft: `3px solid ${JAWS_RED}`,
+        }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: JAWS_RED, letterSpacing: "0.15em", marginBottom: 10 }}>
+            ▶ CLASSIFIED PRODUCTION NOTES — FOR SAM'S EYES ONLY
+          </div>
+          <p style={{ fontSize: 13.5, color: JAWS_TEXT, lineHeight: 1.75, margin: 0, opacity: 0.9 }}>
+            {site.lore}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function JawsTrail() {
+  const [visited, setVisited] = useState({});
+  const toggle = (id) => setVisited(prev => ({ ...prev, [id]: !prev[id] }));
+  const visitedCount = Object.values(visited).filter(Boolean).length;
+  const total = jawsSites.length;
+  const pct = Math.round((visitedCount / total) * 100);
+
+  return (
+    <div style={{ background: JAWS_DARK, borderRadius: 20, padding: "24px 16px", minHeight: 400 }}>
+      {/* Header banner */}
+      <div style={{ textAlign: "center", marginBottom: 28 }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: JAWS_MUTED, letterSpacing: "0.3em", marginBottom: 10 }}>
+          STRICTLY UNOFFICIAL · HISTORICALLY INACCURATE
+        </div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: JAWS_TEXT, lineHeight: 1.1, marginBottom: 6 }}>
+          🦈 Sam's Jaws Trail
+        </div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 15, color: JAWS_GOLD, marginBottom: 20 }}>
+          The Secret Yellowstone Locations Behind the Greatest Shark Film Ever Made
+        </div>
+        <div style={{ fontSize: 12, color: JAWS_MUTED, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 24px", padding: "0 8px" }}>
+          What the National Park Service doesn't want you to know: Yellowstone's hydrothermal features
+          were the hidden creative backbone of Jaws (1974). Steven Spielberg. Peter Benchley.
+          A mechanical shark named Bruce. And these exact locations.
+          Check each site as you visit it. Read the lore. Tell no one.
+        </div>
+
+        {/* Progress tracker */}
+        <div style={{ background: `${JAWS_BLUE}44`, border: `1px solid ${JAWS_BLUE}88`, borderRadius: 14, padding: "16px 20px", maxWidth: 380, margin: "0 auto" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: JAWS_MUTED, letterSpacing: "0.1em" }}>
+              SITES INVESTIGATED
+            </div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, color: visitedCount === total ? JAWS_GOLD : JAWS_TEXT }}>
+              {visitedCount} / {total}
+            </div>
+          </div>
+          <div style={{ height: 6, background: `${JAWS_BLUE}66`, borderRadius: 99 }}>
+            <div style={{ width: `${pct}%`, height: "100%", background: visitedCount === total ? JAWS_GOLD : JAWS_TEAL, borderRadius: 99, transition: "width 0.4s ease" }} />
+          </div>
+          {visitedCount === total && (
+            <div style={{ marginTop: 14, fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 14, color: JAWS_GOLD, textAlign: "center" }}>
+              🦈 You're gonna need a bigger boat. Trail complete.
+            </div>
+          )}
+          {visitedCount === 0 && (
+            <div style={{ marginTop: 10, fontSize: 12, color: JAWS_MUTED, textAlign: "center" }}>
+              Begin your investigation. Tap LORE to read each site's classified history.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Site cards */}
+      {jawsSites.map(site => (
+        <JawsSiteCard key={site.id} site={site} visited={!!visited[site.id]} onToggle={toggle} />
+      ))}
+
+      <div style={{ textAlign: "center", marginTop: 20, fontFamily: "'DM Mono', monospace", fontSize: 10, color: `${JAWS_MUTED}88`, letterSpacing: "0.1em", lineHeight: 1.8 }}>
+        ALL LORE ON THIS PAGE IS COMPLETELY MADE UP.<br />
+        NONE OF THIS IS REAL. JAWS WAS FILMED IN MARTHA'S VINEYARD.<br />
+        BUT ALSO... IS ANY OF IT REALLY FAKE? (YES. IT IS. ENTIRELY FAKE.)
+      </div>
+    </div>
+  );
+}
+
+// ╔══════════════════════════════════════════════════════════════════════════╗
 // ║  ROOT APP                                                                ║
 // ╚══════════════════════════════════════════════════════════════════════════╝
 export default function App() {
@@ -571,6 +847,7 @@ export default function App() {
     { id: "itinerary", label: "📅 Itinerary" },
     { id: "packing",   label: "🎒 Packing" },
     { id: "grocery",   label: "🛒 Grocery" },
+    { id: "jaws",      label: "🦈 Sam's Trail" },
   ];
 
   return (
@@ -582,7 +859,7 @@ export default function App() {
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(32px, 8vw, 60px)", fontWeight: 700, color: "#fff", margin: "0 0 8px", lineHeight: 1.1 }}>Yellowstone<br />&amp; the Tetons</h1>
         <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 18, color: C.sageLight, margin: "0 0 32px" }}>Dad + Three Girls · Family Adventure</p>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 0, background: "rgba(255,255,255,0.1)", borderRadius: 40, padding: 4, maxWidth: 420, margin: "0 auto" }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 0, background: "rgba(255,255,255,0.1)", borderRadius: 40, padding: 4, maxWidth: 560, margin: "0 auto" }}>
           {tabs.map(t => (
             <button key={t.id} onClick={() => setTab(t.id)} style={{ flex: 1, padding: "10px 12px", borderRadius: 36, border: "none", cursor: "pointer", fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, transition: "all 0.2s ease", background: tab === t.id ? "#fff" : "transparent", color: tab === t.id ? C.pine : "rgba(255,255,255,0.85)" }}>
               {t.label}
@@ -621,6 +898,7 @@ export default function App() {
             />
           </>
         )}
+        {tab === "jaws" && <JawsTrail />}
       </main>
 
       <footer style={{ textAlign: "center", padding: "24px 16px 40px", borderTop: `1px solid ${C.warm}` }}>

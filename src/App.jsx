@@ -152,10 +152,7 @@ const days = [
 // ╚══════════════════════════════════════════════════════════════════════════╝
 const packingSections = [
   {
-    id: "dad-layers",
-    icon: "🧥",
-    title: "Dad — Layering System",
-    color: C.pine,
+    id: "dad-layers", icon: "🧥", title: "Dad — Layering System", color: C.pine,
     items: [
       { id: "d1", text: "Smartwool Classic All-Season Merino long sleeve base layer (×2)", note: "Your moisture-wicking layer — no separate synthetic needed" },
       { id: "d2", text: "Patagonia R1 Air Full-Zip Hoody (mid layer)", note: "Fleece that breathes well under shell" },
@@ -170,10 +167,7 @@ const packingSections = [
     ],
   },
   {
-    id: "girls-layers",
-    icon: "👧",
-    title: "Girls — Layering System (All 3)",
-    color: C.sage,
+    id: "girls-layers", icon: "👧", title: "Girls — Layering System (All 3)", color: C.sage,
     items: [
       { id: "g1", text: "Merino base layers — 8 & 6-year-old: Smartwool Classic Thermal Merino Kids (×2 each)" },
       { id: "g2", text: "Merino base layer — 3-year-old: Iksplor brand (×2)", note: "She runs warmer in the carrier but needs warmth when stopped" },
@@ -191,10 +185,7 @@ const packingSections = [
     ],
   },
   {
-    id: "gear",
-    icon: "🎒",
-    title: "Hiking Gear & Carrier",
-    color: C.amber,
+    id: "gear", icon: "🎒", title: "Hiking Gear & Carrier", color: C.amber,
     items: [
       { id: "hg1", text: "Framed toddler hiking carrier", note: "Your primary gear item — confirm all straps and buckles working" },
       { id: "hg2", text: "Osprey Jet 18L — 8-year-old's pack" },
@@ -211,10 +202,7 @@ const packingSections = [
     ],
   },
   {
-    id: "camera",
-    icon: "📷",
-    title: "Camera Gear",
-    color: C.rust,
+    id: "camera", icon: "📷", title: "Camera Gear", color: C.rust,
     items: [
       { id: "c1", text: "Sony Alpha 6400 body" },
       { id: "c2", text: "Telephoto lens", note: "Your primary lens for wildlife — keep it mounted on the trail" },
@@ -228,24 +216,18 @@ const packingSections = [
     ],
   },
   {
-    id: "food",
-    icon: "🥪",
-    title: "Food, Snacks & Airbnb",
-    color: C.sky,
+    id: "pack-food", icon: "🥪", title: "Food, Snacks & Airbnb", color: C.sky,
     items: [
       { id: "f1", text: "Trail snacks (×7 days worth)", note: "Bars, trail mix, jerky, fruit pouches for toddler" },
       { id: "f2", text: "Sandwich supplies for packed lunches" },
       { id: "f3", text: "Kids' electrolyte packets (Liquid IV or Nuun Kids)" },
-      { id: "f4", text: "Coffee setup", note: "⚠️ Don't assume the Airbnb has what you need — bring pour-over or AeroPress" },
+      { id: "f4", text: "Coffee setup", note: "⚠️ Check VRBO first — bring pour-over or AeroPress if not supplied" },
       { id: "f5", text: "Reusable snack bags + cooler bag" },
       { id: "f6", text: "Small cutting board + knife for Airbnb cooking" },
     ],
   },
   {
-    id: "kid-extras",
-    icon: "🌟",
-    title: "Kid Extras",
-    color: "#7a5b8a",
+    id: "kid-extras", icon: "🌟", title: "Kid Extras", color: "#7a5b8a",
     items: [
       { id: "ke1", text: "Junior Ranger workbooks (optional pre-download)", note: "Or just grab at the first visitor center — they're free" },
       { id: "ke2", text: "National Park Passport booklets (×1 per kid)", note: "Collect stamps at every visitor center — huge motivation" },
@@ -257,10 +239,7 @@ const packingSections = [
     ],
   },
   {
-    id: "documents",
-    icon: "📋",
-    title: "Documents & Tech",
-    color: C.muted,
+    id: "documents", icon: "📋", title: "Documents & Tech", color: C.muted,
     items: [
       { id: "doc1", text: "America the Beautiful Annual Pass OR park entry fees ready ($35/vehicle)" },
       { id: "doc2", text: "Airbnb confirmation + address + host number (offline)" },
@@ -273,70 +252,177 @@ const packingSections = [
 ];
 
 // ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  GROCERY LIST DATA  (aisle order, 5 adults + 4 kids incl. Sam age 11)   ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+const grocerySections = [
+  {
+    id: "gr-produce", icon: "🥦", title: "Produce", color: "#4a7c59",
+    items: [
+      { id: "gr1",  text: "Bananas — 3 bunches" },
+      { id: "gr2",  text: "Apples — 14–16 (for lunches + snacking)" },
+      { id: "gr3",  text: "Oranges or tangerines — 1 bag" },
+      { id: "gr4",  text: "Strawberries — 2 lbs" },
+      { id: "gr5",  text: "Blueberries — 1–2 pints" },
+      { id: "gr6",  text: "Grapes — 2 lbs" },
+      { id: "gr7",  text: "Carrots — 1 bag (snacking + lunches)" },
+      { id: "gr8",  text: "Celery — 1 bunch" },
+      { id: "gr9",  text: "Salad kits — 3–4 bags (ready-to-eat)" },
+    ],
+  },
+  {
+    id: "gr-bakery", icon: "🍞", title: "Bread & Bakery", color: "#c97d2e",
+    items: [
+      { id: "gr10", text: "Sandwich bread — 1 white loaf, 1 whole wheat loaf", note: "Get sturdy sandwich-style, not artisan — holds up better in cooler" },
+      { id: "gr11", text: "Tortillas — 1 pack (for wraps + quesadilla nights)" },
+    ],
+  },
+  {
+    id: "gr-cereal", icon: "🥣", title: "Cereal, Breakfast & Baking", color: "#8B7355",
+    items: [
+      { id: "gr12", text: "Cheerios — 1 large box (girls)" },
+      { id: "gr13", text: "High-protein granola — 1 large bag (Eric, for yogurt bowls)" },
+      { id: "gr14", text: "High-protein instant oatmeal packets — 10–12 packets (Lauren)" },
+      { id: "gr15", text: "Breakfast bars / granola bars — 2+ boxes (Clif, Kind, or RXBar)", note: "Also pull double duty as trail snacks" },
+      { id: "gr16", text: "Frozen waffles — 1–2 boxes", note: "⚠️ Check VRBO for freezer space first" },
+      { id: "gr17", text: "Syrup — 1 bottle", note: "⚠️ Often stocked in vacation rentals — check first" },
+      { id: "gr18", text: "Brown sugar — 1 small bag (for oatmeal)" },
+      { id: "gr19", text: "Oatmeal (old fashioned) — 1 canister (backup / alternate mornings)" },
+    ],
+  },
+  {
+    id: "gr-canned", icon: "🥫", title: "Condiments, Oils & Pantry", color: "#7a6b4a",
+    items: [
+      { id: "gr20", text: "Peanut butter — 1 large jar" },
+      { id: "gr21", text: "Honey — 1 bottle" },
+      { id: "gr22", text: "Jelly — 1 small jar" },
+      { id: "gr23", text: "Mayonnaise — 1 small jar" },
+      { id: "gr24", text: "Ketchup — 1 bottle", note: "⚠️ Often stocked in vacation rentals — check first" },
+      { id: "gr25", text: "Salsa — 1–2 jars" },
+      { id: "gr26", text: "Salt & pepper", note: "⚠️ Almost always at a VRBO — check before buying" },
+      { id: "gr27", text: "Butter — 1 lb", note: "⚠️ Check VRBO — sometimes stocked" },
+      { id: "gr28", text: "Spaghetti noodles + pasta sauce — 1 box + 2 jars (easy group dinner)" },
+    ],
+  },
+  {
+    id: "gr-snacks", icon: "🍿", title: "Snacks & Candy", color: "#8B5E3C",
+    items: [
+      { id: "gr29", text: "Chips — individual snack bags, 2 variety packs" },
+      { id: "gr30", text: "Tortilla chips — 1 large bag (with salsa)" },
+      { id: "gr31", text: "Goldfish crackers — 1 large bag (girls)" },
+      { id: "gr32", text: "Trail mix — 2 large bags (one nut-heavy, one mixed for kids)" },
+      { id: "gr33", text: "Fig bars (Nature's Bakery or similar) — 2 boxes" },
+      { id: "gr34", text: "Rice cakes — 1 bag" },
+      { id: "gr35", text: "Jerky (beef or turkey) — 2–3 packs" },
+      { id: "gr36", text: "Mixed nuts — 1 large bag" },
+      { id: "gr37", text: "Oreos — 1 pack" },
+      { id: "gr38", text: "M&Ms — 1–2 bags" },
+    ],
+  },
+  {
+    id: "gr-dairy", icon: "🧀", title: "Dairy & Eggs", color: "#6b9ab8",
+    items: [
+      { id: "gr39", text: "Milk — 1 gallon" },
+      { id: "gr40", text: "Eggs — 18 count (breakfasts + hard boil for trail)" },
+      { id: "gr41", text: "Greek yogurt (plain or vanilla, high protein) — 14 cups (Eric's breakfasts)" },
+      { id: "gr42", text: "GoGurt or Trix yogurt tubes — 2 boxes (kids' trail snack)" },
+      { id: "gr43", text: "Sliced cheese — cheddar AND swiss, 8 oz each (sandwiches)" },
+      { id: "gr44", text: "Babybel or Sargento snack cheese rounds — 2 packs (trail snack)" },
+      { id: "gr45", text: "Butter — 1 lb (if not at VRBO — see pantry section)" },
+    ],
+  },
+  {
+    id: "gr-meat", icon: "🥩", title: "Meat & Deli", color: "#a84b2a",
+    items: [
+      { id: "gr46", text: "Deli turkey — 1.5 lbs (sandwiches for full group)" },
+      { id: "gr47", text: "Deli ham — 1 lb" },
+      { id: "gr48", text: "Lunch meat variety — extra if available (9 people over 7 days)" },
+      { id: "gr49", text: "Precooked bacon — 1–2 packages", note: "Microwave-ready, no mess at VRBO" },
+      { id: "gr50", text: "Microwaveable breakfast sausage links — 1 box (girls' breakfast)" },
+      { id: "gr51", text: "Sausage (dinner — smoked or Italian) — 1 pack" },
+      { id: "gr52", text: "Chicken nuggets — 1 large bag (easy kid dinner)" },
+    ],
+  },
+  {
+    id: "gr-frozen", icon: "🧊", title: "Frozen & Refrigerated", color: "#5a7a8a",
+    items: [
+      { id: "gr53", text: "Frozen waffles — 1–2 boxes (see cereal section — confirm VRBO freezer space)" },
+      { id: "gr54", text: "Ice for cooler — 2 large bags", note: "Buy at a gas station near VRBO — don't try to transport" },
+    ],
+  },
+  {
+    id: "gr-drinks", icon: "🥤", title: "Drinks", color: "#6B5B8B",
+    items: [
+      { id: "gr55", text: "Bottled water, 24-pack — 2 cases", note: "Park tap water has sulfur taste — you'll want your own" },
+      { id: "gr56", text: "Gatorade or electrolyte drinks — 6–8 bottles (high altitude = dehydration sneaks up)" },
+      { id: "gr57", text: "Coke Zero — 1 12-pack" },
+      { id: "gr58", text: "Ground coffee or pods — enough for 7 mornings", note: "⚠️ Check VRBO listing first — many provide a coffee maker and basic pods" },
+      { id: "gr59", text: "Fruit pouches (Mott's or Ella's Kitchen) — 12–15 (toddler trail snack)" },
+    ],
+  },
+  {
+    id: "gr-supplies", icon: "🧴", title: "Household Supplies", color: C.muted,
+    items: [
+      { id: "gr60", text: "Paper plates — 1 pack", note: "⚠️ Check VRBO — most large rentals have dishes" },
+      { id: "gr61", text: "Paper towels — 1 roll", note: "⚠️ Check VRBO — usually provided, but often just 1 roll" },
+      { id: "gr62", text: "Paper napkins — 1 pack" },
+      { id: "gr63", text: "Ziplock bags, sandwich size — 1 box" },
+      { id: "gr64", text: "Ziplock bags, gallon size — 1 box (packing lunches + wet clothes)" },
+      { id: "gr65", text: "Trash bags, small/medium — 1 box", note: "⚠️ Check VRBO — sometimes stocked under the sink" },
+      { id: "gr66", text: "Dish soap — 1 small bottle", note: "⚠️ Check VRBO — almost always there" },
+      { id: "gr67", text: "Plastic cutlery/sporks — small pack (backup for trail lunches)" },
+      { id: "gr68", text: "Garbage bags (large) — 1 box" },
+      { id: "gr69", text: "Kleenex — 1 box" },
+      { id: "gr70", text: "Baby wipes — 1–2 packs (toddler + general cleanup for whole group)" },
+      { id: "gr71", text: "Small laundry detergent", note: "⚠️ Check VRBO — large rentals almost always have a washer + detergent" },
+      { id: "gr72", text: "Size 5 diapers — Pampers Swaddlers preferred, 1 box (roughly 60 ct for 7 days)" },
+      { id: "gr73", text: "Cooler — borrow or bring from home", note: "Don't buy unless you have to — most group VRBOs have one" },
+    ],
+  },
+];
+
+// ╔══════════════════════════════════════════════════════════════════════════╗
 // ║  ITINERARY COMPONENTS                                                    ║
 // ╚══════════════════════════════════════════════════════════════════════════╝
 const activityTypeColors = {
-  geothermal: { bg: "#fff3e0", border: "#c97d2e", dot: "#c97d2e" },
-  wildlife:   { bg: "#e8f5e9", border: "#4a7c59", dot: "#4a7c59" },
-  hiking:     { bg: "#e3f2fd", border: "#6b9ab8", dot: "#6b9ab8" },
-  scenic:     { bg: "#f3e5f5", border: "#8b6b9b", dot: "#8b6b9b" },
-  food:       { bg: "#fce4ec", border: "#a84b2a", dot: "#a84b2a" },
-  rest:       { bg: "#f1f8e9", border: "#8bc34a", dot: "#8bc34a" },
-  swimming:   { bg: "#e0f7fa", border: "#00838f", dot: "#00838f" },
-  education:  { bg: "#fff8e1", border: "#f9a825", dot: "#f9a825" },
-  photography:{ bg: "#fbe9e7", border: "#bf360c", dot: "#bf360c" },
+  geothermal:  { bg: "#fff3e0", border: "#c97d2e", dot: "#c97d2e" },
+  wildlife:    { bg: "#e8f5e9", border: "#4a7c59", dot: "#4a7c59" },
+  hiking:      { bg: "#e3f2fd", border: "#6b9ab8", dot: "#6b9ab8" },
+  scenic:      { bg: "#f3e5f5", border: "#8b6b9b", dot: "#8b6b9b" },
+  food:        { bg: "#fce4ec", border: "#a84b2a", dot: "#a84b2a" },
+  rest:        { bg: "#f1f8e9", border: "#8bc34a", dot: "#8bc34a" },
+  swimming:    { bg: "#e0f7fa", border: "#00838f", dot: "#00838f" },
+  education:   { bg: "#fff8e1", border: "#f9a825", dot: "#f9a825" },
+  photography: { bg: "#fbe9e7", border: "#bf360c", dot: "#bf360c" },
 };
 
 function ActivityCard({ activity }) {
   const [open, setOpen] = useState(false);
   const tc = activityTypeColors[activity.type] || activityTypeColors.scenic;
   return (
-    <div
-      onClick={() => setOpen(!open)}
-      style={{
-        background: open ? tc.bg : "#fff",
-        border: `1.5px solid ${open ? tc.border : "#e0dcd4"}`,
-        borderRadius: 12,
-        padding: "14px 16px",
-        cursor: "pointer",
-        transition: "all 0.2s ease",
-        marginBottom: 10,
-      }}
-    >
+    <div onClick={() => setOpen(!open)} style={{
+      background: open ? tc.bg : "#fff", border: `1.5px solid ${open ? tc.border : "#e0dcd4"}`,
+      borderRadius: 12, padding: "14px 16px", cursor: "pointer", transition: "all 0.2s ease", marginBottom: 10,
+    }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <span style={{ fontSize: 22, flexShrink: 0 }}>{activity.icon}</span>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.1em" }}>
-              {activity.time}
-            </span>
-            <span style={{
-              background: tc.bg, color: tc.dot, border: `1px solid ${tc.border}`,
-              borderRadius: 999, fontSize: 9, padding: "2px 8px", textTransform: "uppercase",
-              letterSpacing: "0.08em", fontWeight: 600, flexShrink: 0,
-            }}>
-              {activity.type}
-            </span>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.1em" }}>{activity.time}</span>
+            <span style={{ background: tc.bg, color: tc.dot, border: `1px solid ${tc.border}`, borderRadius: 999, fontSize: 9, padding: "2px 8px", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600, flexShrink: 0 }}>{activity.type}</span>
           </div>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, color: C.pine, marginTop: 3 }}>
-            {activity.title}
-          </div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 15, fontWeight: 700, color: C.pine, marginTop: 3 }}>{activity.title}</div>
         </div>
         <span style={{ color: C.muted, fontSize: 16, flexShrink: 0 }}>{open ? "▲" : "▼"}</span>
       </div>
       {open && (
         <div style={{ marginTop: 14, paddingTop: 14, borderTop: `1px dashed ${tc.border}` }}>
           <p style={{ color: C.text, fontSize: 14, lineHeight: 1.65, marginBottom: 12 }}>{activity.description}</p>
-          {activity.tips && (
-            <div>
-              {activity.tips.map((tip, i) => (
-                <div key={i} style={{ display: "flex", gap: 8, marginBottom: 5 }}>
-                  <span style={{ color: tc.dot, fontWeight: 700, flexShrink: 0 }}>→</span>
-                  <span style={{ fontSize: 13, color: C.muted, lineHeight: 1.5 }}>{tip}</span>
-                </div>
-              ))}
+          {activity.tips && activity.tips.map((tip, i) => (
+            <div key={i} style={{ display: "flex", gap: 8, marginBottom: 5 }}>
+              <span style={{ color: tc.dot, fontWeight: 700, flexShrink: 0 }}>→</span>
+              <span style={{ fontSize: 13, color: C.muted, lineHeight: 1.5 }}>{tip}</span>
             </div>
-          )}
+          ))}
         </div>
       )}
     </div>
@@ -346,33 +432,12 @@ function ActivityCard({ activity }) {
 function DayCard({ d }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{
-      border: `2px solid ${d.color}22`,
-      borderRadius: 16,
-      marginBottom: 20,
-      overflow: "hidden",
-      boxShadow: "0 2px 12px rgba(26,58,42,0.07)",
-    }}>
-      <div
-        onClick={() => setOpen(!open)}
-        style={{
-          background: `linear-gradient(135deg, ${d.color}18, ${d.color}08)`,
-          borderLeft: `5px solid ${d.color}`,
-          padding: "18px 20px",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          gap: 16,
-        }}
-      >
+    <div style={{ border: `2px solid ${d.color}22`, borderRadius: 16, marginBottom: 20, overflow: "hidden", boxShadow: "0 2px 12px rgba(26,58,42,0.07)" }}>
+      <div onClick={() => setOpen(!open)} style={{ background: `linear-gradient(135deg, ${d.color}18, ${d.color}08)`, borderLeft: `5px solid ${d.color}`, padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 16 }}>
         <span style={{ fontSize: 32 }}>{d.emoji}</span>
         <div style={{ flex: 1 }}>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            {d.label} · {d.region}
-          </div>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: C.pine, lineHeight: 1.2, marginTop: 3 }}>
-            {d.theme}
-          </div>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.15em", textTransform: "uppercase" }}>{d.label} · {d.region}</div>
+          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: C.pine, lineHeight: 1.2, marginTop: 3 }}>{d.theme}</div>
         </div>
         <span style={{ color: d.color, fontSize: 20 }}>{open ? "▲" : "▼"}</span>
       </div>
@@ -401,11 +466,7 @@ function ProTips() {
   ];
   return (
     <div style={{ border: `2px solid ${C.sage}33`, borderRadius: 16, marginBottom: 24, overflow: "hidden" }}>
-      <div onClick={() => setOpen(!open)} style={{
-        background: `linear-gradient(135deg, ${C.sage}15, ${C.sage}05)`,
-        borderLeft: `5px solid ${C.sage}`,
-        padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 12,
-      }}>
+      <div onClick={() => setOpen(!open)} style={{ background: `linear-gradient(135deg, ${C.sage}15, ${C.sage}05)`, borderLeft: `5px solid ${C.sage}`, padding: "18px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
         <span style={{ fontSize: 26 }}>💡</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.15em", textTransform: "uppercase" }}>Family Wisdom</div>
@@ -428,34 +489,17 @@ function ProTips() {
 }
 
 // ╔══════════════════════════════════════════════════════════════════════════╗
-// ║  PACKING LIST COMPONENTS                                                 ║
+// ║  SHARED CHECKLIST COMPONENTS (used by both Packing and Grocery)         ║
 // ╚══════════════════════════════════════════════════════════════════════════╝
-function PackingSection({ section, checked, onToggle }) {
-  const [open, setOpen] = useState(true);
+function CheckSection({ section, checked, onToggle, defaultOpen = true }) {
+  const [open, setOpen] = useState(defaultOpen);
   const total = section.items.length;
   const done = section.items.filter(it => checked[it.id]).length;
   const pct = Math.round((done / total) * 100);
 
   return (
-    <div style={{
-      border: `2px solid ${section.color}22`,
-      borderRadius: 16,
-      marginBottom: 20,
-      overflow: "hidden",
-      boxShadow: "0 2px 12px rgba(26,58,42,0.06)",
-    }}>
-      <div
-        onClick={() => setOpen(!open)}
-        style={{
-          background: `linear-gradient(135deg, ${section.color}18, ${section.color}06)`,
-          borderLeft: `5px solid ${section.color}`,
-          padding: "16px 20px",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          gap: 14,
-        }}
-      >
+    <div style={{ border: `2px solid ${section.color}22`, borderRadius: 16, marginBottom: 20, overflow: "hidden", boxShadow: "0 2px 12px rgba(26,58,42,0.06)" }}>
+      <div onClick={() => setOpen(!open)} style={{ background: `linear-gradient(135deg, ${section.color}18, ${section.color}06)`, borderLeft: `5px solid ${section.color}`, padding: "16px 20px", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}>
         <span style={{ fontSize: 28 }}>{section.icon}</span>
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 17, fontWeight: 700, color: C.pine }}>{section.title}</div>
@@ -471,42 +515,13 @@ function PackingSection({ section, checked, onToggle }) {
       {open && (
         <div style={{ padding: "12px 16px 16px" }}>
           {section.items.map(item => (
-            <div
-              key={item.id}
-              onClick={() => onToggle(item.id)}
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: 12,
-                padding: "10px 12px",
-                borderRadius: 10,
-                cursor: "pointer",
-                background: checked[item.id] ? `${section.color}10` : "transparent",
-                marginBottom: 4,
-                transition: "background 0.15s ease",
-              }}
-            >
-              <div style={{
-                width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked[item.id] ? section.color : "#ccc"}`,
-                background: checked[item.id] ? section.color : "transparent",
-                flexShrink: 0, marginTop: 1, display: "flex", alignItems: "center", justifyContent: "center",
-                transition: "all 0.15s ease",
-              }}>
+            <div key={item.id} onClick={() => onToggle(item.id)} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "10px 12px", borderRadius: 10, cursor: "pointer", background: checked[item.id] ? `${section.color}10` : "transparent", marginBottom: 4, transition: "background 0.15s ease" }}>
+              <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked[item.id] ? section.color : "#ccc"}`, background: checked[item.id] ? section.color : "transparent", flexShrink: 0, marginTop: 1, display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.15s ease" }}>
                 {checked[item.id] && <span style={{ color: "#fff", fontSize: 13, fontWeight: 700 }}>✓</span>}
               </div>
               <div>
-                <div style={{
-                  fontSize: 14, color: checked[item.id] ? C.muted : C.text,
-                  textDecoration: checked[item.id] ? "line-through" : "none",
-                  lineHeight: 1.5, fontWeight: 500,
-                }}>
-                  {item.text}
-                </div>
-                {item.note && (
-                  <div style={{ fontSize: 12, color: C.muted, marginTop: 2, fontStyle: "italic" }}>
-                    {item.note}
-                  </div>
-                )}
+                <div style={{ fontSize: 14, color: checked[item.id] ? C.muted : C.text, textDecoration: checked[item.id] ? "line-through" : "none", lineHeight: 1.5, fontWeight: 500 }}>{item.text}</div>
+                {item.note && <div style={{ fontSize: 12, color: item.note.startsWith("⚠️") ? C.amber : C.muted, marginTop: 2, fontStyle: "italic" }}>{item.note}</div>}
               </div>
             </div>
           ))}
@@ -516,36 +531,22 @@ function PackingSection({ section, checked, onToggle }) {
   );
 }
 
-function PackingList() {
+function ChecklistPage({ sections, label, footer }) {
   const [checked, setChecked] = useState({});
   const toggle = (id) => setChecked(prev => ({ ...prev, [id]: !prev[id] }));
-
-  const totalItems = packingSections.reduce((acc, s) => acc + s.items.length, 0);
+  const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
   const totalDone = Object.values(checked).filter(Boolean).length;
   const overallPct = Math.round((totalDone / totalItems) * 100);
 
   return (
     <div>
-      {/* Overall progress */}
-      <div style={{
-        background: `linear-gradient(135deg, ${C.pine}15, ${C.pine}05)`,
-        border: `2px solid ${C.pine}22`, borderRadius: 16,
-        padding: "20px 24px", marginBottom: 24,
-      }}>
+      <div style={{ background: `linear-gradient(135deg, ${C.pine}15, ${C.pine}05)`, border: `2px solid ${C.pine}22`, borderRadius: 16, padding: "20px 24px", marginBottom: 24 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: C.pine }}>
-              Packing Progress
-            </div>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.muted, marginTop: 2 }}>
-              {totalDone} of {totalItems} items packed
-            </div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: C.pine }}>{label}</div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.muted, marginTop: 2 }}>{totalDone} of {totalItems} items</div>
           </div>
-          <div style={{
-            width: 60, height: 60, borderRadius: "50%",
-            background: `conic-gradient(${C.pine} ${overallPct * 3.6}deg, #e0dcd4 0deg)`,
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
+          <div style={{ width: 60, height: 60, borderRadius: "50%", background: `conic-gradient(${C.pine} ${overallPct * 3.6}deg, #e0dcd4 0deg)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: 46, height: 46, borderRadius: "50%", background: C.cream, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, fontWeight: 700, color: C.pine }}>{overallPct}%</span>
             </div>
@@ -555,12 +556,8 @@ function PackingList() {
           <div style={{ width: `${overallPct}%`, height: "100%", background: C.pine, borderRadius: 99, transition: "width 0.3s ease" }} />
         </div>
       </div>
-      {packingSections.map(section => (
-        <PackingSection key={section.id} section={section} checked={checked} onToggle={toggle} />
-      ))}
-      <div style={{ textAlign: "center", padding: "16px 0 8px", fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.1em" }}>
-        CHECK OFF AS YOU PACK · PROGRESS RESETS ON PAGE REFRESH
-      </div>
+      {sections.map(section => <CheckSection key={section.id} section={section} checked={checked} onToggle={toggle} />)}
+      <div style={{ textAlign: "center", padding: "16px 0 8px", fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.1em" }}>{footer}</div>
     </div>
   );
 }
@@ -570,91 +567,64 @@ function PackingList() {
 // ╚══════════════════════════════════════════════════════════════════════════╝
 export default function App() {
   const [tab, setTab] = useState("itinerary");
+  const tabs = [
+    { id: "itinerary", label: "📅 Itinerary" },
+    { id: "packing",   label: "🎒 Packing" },
+    { id: "grocery",   label: "🛒 Grocery" },
+  ];
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: C.cream,
-      fontFamily: "'DM Sans', sans-serif",
-      fontWeight: 300,
-      color: C.text,
-    }}>
-      {/* Fonts */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
-        * { box-sizing: border-box; }
-        body { margin: 0; }
-      `}</style>
+    <div style={{ minHeight: "100vh", background: C.cream, fontFamily: "'DM Sans', sans-serif", fontWeight: 300, color: C.text }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap'); * { box-sizing: border-box; } body { margin: 0; }`}</style>
 
-      {/* Header */}
-      <header style={{
-        background: `linear-gradient(160deg, ${C.pine} 0%, ${C.pineMid} 60%, ${C.sage} 100%)`,
-        padding: "52px 24px 40px",
-        textAlign: "center",
-      }}>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: "0.3em", color: `${C.sageLight}cc`, textTransform: "uppercase", marginBottom: 14 }}>
-          JUNE 6–13, 2026
-        </div>
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(32px, 8vw, 60px)",
-          fontWeight: 700,
-          color: "#fff",
-          margin: "0 0 8px",
-          lineHeight: 1.1,
-        }}>
-          Yellowstone<br />& the Tetons
-        </h1>
-        <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 18, color: C.sageLight, margin: "0 0 32px" }}>
-          Dad + Three Girls · Family Adventure
-        </p>
+      <header style={{ background: `linear-gradient(160deg, ${C.pine} 0%, ${C.pineMid} 60%, ${C.sage} 100%)`, padding: "52px 24px 40px", textAlign: "center" }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: "0.3em", color: `${C.sageLight}cc`, textTransform: "uppercase", marginBottom: 14 }}>JUNE 6–13, 2026</div>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(32px, 8vw, 60px)", fontWeight: 700, color: "#fff", margin: "0 0 8px", lineHeight: 1.1 }}>Yellowstone<br />&amp; the Tetons</h1>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 18, color: C.sageLight, margin: "0 0 32px" }}>Dad + Three Girls · Family Adventure</p>
 
-        {/* Tab nav */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 0, background: "rgba(255,255,255,0.1)", borderRadius: 40, padding: 4, maxWidth: 360, margin: "0 auto" }}>
-          {[
-            { id: "itinerary", label: "📅 Itinerary" },
-            { id: "packing",   label: "🎒 Packing List" },
-          ].map(t => (
-            <button
-              key={t.id}
-              onClick={() => setTab(t.id)}
-              style={{
-                flex: 1,
-                padding: "10px 16px",
-                borderRadius: 36,
-                border: "none",
-                cursor: "pointer",
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 14,
-                fontWeight: 500,
-                transition: "all 0.2s ease",
-                background: tab === t.id ? "#fff" : "transparent",
-                color: tab === t.id ? C.pine : "rgba(255,255,255,0.85)",
-              }}
-            >
+        <div style={{ display: "flex", justifyContent: "center", gap: 0, background: "rgba(255,255,255,0.1)", borderRadius: 40, padding: 4, maxWidth: 420, margin: "0 auto" }}>
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} style={{ flex: 1, padding: "10px 12px", borderRadius: 36, border: "none", cursor: "pointer", fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, transition: "all 0.2s ease", background: tab === t.id ? "#fff" : "transparent", color: tab === t.id ? C.pine : "rgba(255,255,255,0.85)" }}>
               {t.label}
             </button>
           ))}
         </div>
       </header>
 
-      {/* Content */}
       <main style={{ maxWidth: 720, margin: "0 auto", padding: "32px 16px 80px" }}>
-        {tab === "itinerary" ? (
+        {tab === "itinerary" && (
           <>
             <ProTips />
             {days.map(d => <DayCard key={d.day} d={d} />)}
           </>
-        ) : (
-          <PackingList />
+        )}
+        {tab === "packing" && (
+          <ChecklistPage
+            sections={packingSections}
+            label="Packing Progress"
+            footer="CHECK OFF AS YOU PACK · PROGRESS RESETS ON PAGE REFRESH"
+          />
+        )}
+        {tab === "grocery" && (
+          <>
+            <div style={{ background: `${C.amber}18`, border: `1.5px solid ${C.amber}44`, borderRadius: 12, padding: "14px 18px", marginBottom: 24, display: "flex", gap: 12, alignItems: "flex-start" }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>🏠</span>
+              <div style={{ fontSize: 13, color: C.text, lineHeight: 1.6 }}>
+                <strong>Check VRBO before you shop.</strong> Items marked ⚠️ are commonly stocked in vacation rentals. Confirm what's there when you arrive — don't buy duplicates of salt, dish soap, trash bags, syrup, or a cooler if the rental already has them.
+                <br /><span style={{ color: C.muted }}>List sized for 5 adults + 4 kids (including Sam, age 11) · 7 days</span>
+              </div>
+            </div>
+            <ChecklistPage
+              sections={grocerySections}
+              label="Grocery Progress"
+              footer="SORTED BY STORE AISLE · PROGRESS RESETS ON PAGE REFRESH"
+            />
+          </>
         )}
       </main>
 
-      {/* Footer */}
       <footer style={{ textAlign: "center", padding: "24px 16px 40px", borderTop: `1px solid ${C.warm}` }}>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.15em" }}>
-          OGLE FAMILY · YELLOWSTONE 2026
-        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.muted, letterSpacing: "0.15em" }}>OGLE FAMILY · YELLOWSTONE 2026</div>
       </footer>
     </div>
   );
